@@ -1,0 +1,93 @@
+<head>
+  <link rel="stylesheet" href="app.css" type="text/css" />
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    var googleFontFamilies = ['Dosis'];
+    var customFontFamilies = [];
+    var inGameFontFamilies = googleFontFamilies.slice().concat(customFontFamilies);
+    WebFont.load({
+      custom: {
+        families: customFontFamilies,
+      },
+      google: {
+        families: googleFontFamilies,
+      },
+    });
+  </script> -->
+
+  <script>
+    // function $_GET(item) {
+    //   var svalue = location.search.match(new RegExp('[\?\&]' + item + '=([^\&]*)(\&?)', 'i'));
+    //   return svalue ? svalue[1] : svalue;
+    // }
+    // var supportedLanguages = ['en', 'en_US', 'es', 'it', 'pt', 'zh', 'tr'];
+    // var defaultLanguage = 'en';
+    // var language = $_GET('lang');
+    // if (!language) {
+    //   language = $_GET('language');
+    //   if (!language) {
+    //     language = document.getElementsByTagName('html')[0].getAttribute('lang');
+    //     if (!language) {
+    //       language = navigator.language || navigator.userLanguage;
+    //       if (language) {
+    //         language = language.toLowerCase();
+    //         if (language.indexOf('us') >= 0) language = 'en_US';
+    //         if (supportedLanguages.indexOf(language) < 0) language = defaultLanguage;
+    //       } else {
+    //         language = defaultLanguage;
+    //       }
+    //     }
+    //   }
+    // }
+    function getQueryParam(item) {
+      const svalue = new URLSearchParams(window.location.search).get(item);
+      return svalue ? svalue : null;
+    }
+
+    const supportedLanguages = ["en", "en_US", "es", "it", "pt", "zh", "tr"];
+    const defaultLanguage = "en";
+    let language = getQueryParam("lang") || getQueryParam("language");
+
+    if (!language) {
+      language =
+        document.documentElement.lang ||
+        navigator.language ||
+        navigator.userLanguage;
+      if (language) {
+        language = language.toLowerCase();
+        if (language.includes("us")) language = "en_US";
+        if (!supportedLanguages.includes(language)) language = defaultLanguage;
+      } else {
+        language = defaultLanguage;
+      }
+    }
+
+    var pocoyoOnClickURL = "https://www.pocoyoworld.com";
+    var shareScriptsBaseDirectoryURL = "https://www.pocoyo.com/pocoyize_swf/";
+  </script>
+
+  <script src="lib/md5.js"></script>
+  <script src="lib/phaser.min.js"></script>
+  <script src="game.js"></script>
+</head>
+<body>
+  <div id="inputContainer" class="inputContainer">
+    <div class="inputDiv" id="yournameDiv">
+      <input class="inputField" type="text" id="yourname" />
+    </div>
+    <div class="inputDiv" id="emailDiv">
+      <input class="inputField" type="text" id="email" />
+    </div>
+    <div class="inputDiv" id="email1Div">
+      <input class="inputField" type="text" id="email1" />
+    </div>
+    <div class="inputDiv" id="email2Div">
+      <input class="inputField" type="text" id="email2" />
+    </div>
+    <div class="inputDiv" id="email3Div">
+      <input class="inputField" type="text" id="email3" />
+    </div>
+  </div>
+  <div id="orientationDiv"></div>
+</body>
