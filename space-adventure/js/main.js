@@ -21,7 +21,7 @@ GameObject.Boot = function (game) {
   GameObject.LANG = "es";
 
   // GameObject.GAME_PATH = "/html5-games/aventura-espacio/";
-  GameObject.GAME_PATH = "/space-adventure/";
+  GameObject.GAME_PATH = "../space-adventure/";
 
   GameObject.GAME_IMG =
     GameObject.LANG == "es"
