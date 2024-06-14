@@ -478,7 +478,7 @@ function checkOrientationChanging(heightGreeterAsWidth) {
     game.canvas.style.display = "block";
     document.getElementById("orientationDiv").style.display = "none";
   } else {
-    game.canvas.style.display = "none";
+    game.canvas.style.display = "block";
     document.getElementById("orientationDiv").style.display = "block";
     document.body.style.marginBottom = "0px";
   }
